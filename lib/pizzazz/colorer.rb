@@ -41,7 +41,7 @@ module Pizzazz
         rows = []
         object.keys.collect(&:to_s).sort.each do |key|
           value = (object[key] != nil ? object[key] : object[key.to_sym])
-          rows << %Q{#{tab}<span class="string">"#{key}"</span>: #{node(value)}}
+          rows << %Q{#{tab}<span class="key string">"#{key}"</span>: #{node(value)}}
         end
         s << rows.join(",\n") + "\n"
         @indent -= 1
